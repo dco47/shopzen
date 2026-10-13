@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Découvrez les détails de votre produit ShopZen."
+    />
+    <title>Détail du produit | ShopZen</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Bandeau d’information sur la livraison et les retours. -->
+    <div class="announcement">
+      <p>
+        Livraison offerte dès 33 000 FCFA d’achat
+        <span aria-hidden="true">✦</span> Retours gratuits sous 30 jours
+      </p>
+    </div>
+
+    <!-- En-tête du site avec le logo, les liens rapides et la navigation. -->
+    <header class="site-header">
+      <div class="header-main page-container detail-header">
+        <a class="brand" href="index.html" aria-label="ShopZen, accueil">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path
+                d="M7 11h18l-1.5 15h-15L7 11Z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 12V8a4 4 0 0 1 8 0v4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <path
+                d="M12 18h8"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+          <span>Shop<span class="brand-accent">Zen</span></span>
+        </a>
+
+        <div class="header-actions">
+          <a class="header-link" href="produits.html">Tous les produits</a>
+          <a class="header-link" href="panier.html">
+            <span class="cart-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M3.5 4h2l2.1 11.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.5L21 8H6.2"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle cx="10" cy="20" r="1.2" fill="currentColor" />
+                <circle cx="18" cy="20" r="1.2" fill="currentColor" />
+              </svg>
+            </span>
+            <span>Panier</span>
+          </a>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="Navigation principale">
+        <div class="page-container nav-inner">
+          <a href="index.html">Accueil</a>
+          <a href="produits.html">Tous les produits</a>
+          <a href="index.html#selection">Notre sélection</a>
+          <a href="index.html#engagements">Nos engagements</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Contenu principal de la fiche produit. -->
+    <main class="page-container detail-page">
+      <!-- Indique le chemin entre l’accueil et cette page. -->
+      <nav class="breadcrumbs" aria-label="Fil d’Ariane">
+        <a href="index.html">Accueil</a>
+        <span aria-hidden="true">/</span>
+        <a href="produits.html">Tous les produits</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Détail du produit</span>
+      </nav>
+
+      <!-- Zone où les informations du produit seront affichées. -->
+      <section class="product-detail-section" aria-labelledby="detail-title">
+        <div class="detail-intro">
+          <span class="eyebrow">ShopZen, choisi avec soin</span>
+          <h1 id="detail-title">Votre prochain essentiel</h1>
+          <p>
+            Retrouvez ici les informations détaillées de l’article sélectionné.
+          </p>
+        </div>
+
+        <!-- Message affiché tant qu’aucun produit n’a été chargé. -->
+        <div id="product-detail" class="product-detail-content">
+          <div class="detail-empty">
+            <span class="detail-empty-icon" aria-hidden="true">✦</span>
+            <h2>Choisissez un produit</h2>
+            <p>
+              Sélectionnez un article dans la boutique pour consulter sa fiche
+              détaillée.
+            </p>
+            <a class="button button-primary" href="produits.html"
+              >Voir tous les produits</a
+            >
+          </div>
+        </div>
+
+        <!-- Lien pour revenir au catalogue. -->
+        <a class="detail-back-link" href="produits.html"
+          >← Retour aux produits</a
+        >
+      </section>
+    </main>
+
+    <!-- Pied de page de la boutique. -->
+    <footer class="site-footer">
+      <div class="page-container footer-inner">
+        <a class="brand footer-brand" href="index.html"
+          >Shop<span class="brand-accent">Zen</span></a
+        >
+        <p>Des essentiels choisis avec soin, pour un quotidien plus doux.</p>
+        <span class="copyright">© 2026 ShopZen. Tous droits réservés.</span>
+      </div>
+    </footer>
+
+    <!-- Scripts prévus pour charger les données et le détail du produit. -->
+    <script src="js/produits.js"></script>
+    <script src="js/detail-produit.js"></script>
+  </body>
+</html>
