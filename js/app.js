@@ -6,7 +6,6 @@ const prixAffiche = document.querySelector("#price-output");
 const messageAucunProduit = document.querySelector("#no-products");
 const nombreResultats = document.querySelector("#results-count");
 const boutonEffacer = document.querySelector("#clear-filters");
-const compteurPanier = document.querySelector("#cart-count-header");
 const notificationPanier = document.querySelector("#cart-feedback");
 const afficherAjoutRapide = Boolean(grilleProduits);
 
@@ -19,24 +18,7 @@ function lirePanier() {
   }
 }
 
-function actualiserCompteurPanier() {
-  if (!compteurPanier) {
-    return;
-  }
-
-  const quantite = lirePanier().reduce((total, article) => {
-    return total + (Number(article.quantite) || 0);
-  }, 0);
-
-  compteurPanier.textContent = quantite;
-  compteurPanier.setAttribute(
-    "aria-label",
-    `${quantite} article${quantite === 1 ? "" : "s"} au panier`,
-  );
-}
-
 let minuterieNotification;
-actualiserCompteurPanier();
 
 if (grilleProduits) {
   const parametres = new URLSearchParams(window.location.search);
@@ -78,6 +60,9 @@ if (grilleProduits) {
               <img src="${produit.image}" alt="${produit.nom}">
               <span class="quick-view">Voir le produit <span aria-hidden="true">↗</span></span>
             </a>
+            <button class="favorite-toggle" type="button" data-favorite-toggle="${produit.id}" data-product-name="${produit.nom}">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" /></svg>
+            </button>
             <div class="product-info">
               <span class="product-category">${produit.categorie}</span>
               <h3><a href="produit.html?id=${produit.id}">${produit.nom}</a></h3>
@@ -100,6 +85,8 @@ if (grilleProduits) {
         `,
       )
       .join("");
+
+    ShopZenFavoris.actualiser();
 
     if (messageAucunProduit) {
       messageAucunProduit.hidden = produitsFiltres.length > 0;
@@ -165,7 +152,7 @@ if (grilleProduits) {
       }
 
       localStorage.setItem("panier", JSON.stringify(panier));
-      actualiserCompteurPanier();
+      document.dispatchEvent(new CustomEvent("shopzen:cartchange"));
 
       if (notificationPanier) {
         notificationPanier.textContent = `${produit.nom} ajouté au panier.`;
@@ -177,6 +164,6 @@ if (grilleProduits) {
       }
     });
   }
-
+  afficherProduits();
   afficherProduits();
 }

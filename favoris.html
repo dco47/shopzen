@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Retrouvez les produits que vous avez enregistrés dans vos favoris ShopZen."
+    />
+    <title>Mes favoris | ShopZen</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-main page-container detail-header">
+        <a class="brand" href="index.html" aria-label="ShopZen, accueil">
+          <span>Shop<span class="brand-accent">Zen</span></span>
+        </a>
+        <div class="header-actions">
+          <a class="header-link" href="produits.html">Tous les produits</a>
+          <a class="header-link" href="panier.html">Panier</a>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <div class="page-container nav-inner">
+          <a href="index.html">Accueil</a>
+          <a href="produits.html">Tous les produits</a>
+          <a href="index.html#selection">Notre sélection</a>
+          <a class="nav-current" href="favoris.html" aria-current="page">
+            Favoris <span id="favorites-count" class="favorites-count">0</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-container favorites-page">
+      <nav class="breadcrumbs" aria-label="Fil d’Ariane">
+        <a href="index.html">Accueil</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Mes favoris</span>
+      </nav>
+      <section aria-labelledby="favorites-title">
+        <div class="catalog-heading">
+          <div>
+            <span class="eyebrow">Votre sélection ShopZen</span>
+            <h1 id="favorites-title">Mes favoris</h1>
+            <p>Les produits que vous souhaitez retrouver facilement.</p>
+          </div>
+        </div>
+        <div id="favorites-grid" class="product-grid catalog-section" hidden></div>
+        <div id="favorites-empty" class="favorites-empty" hidden>
+          <span class="eyebrow">Votre sélection ShopZen</span>
+          <h2>Vous n’avez pas encore de favoris</h2>
+          <p>Enregistrez les produits qui vous plaisent en cliquant sur leur cœur.</p>
+          <a class="button button-primary" href="produits.html">Découvrir les produits</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-container footer-inner">
+        <a class="brand footer-brand" href="index.html">Shop<span class="brand-accent">Zen</span></a>
+        <p>Des essentiels choisis avec soin, pour un quotidien plus doux.</p>
+        <span class="copyright">© 2026 ShopZen. Tous droits réservés.</span>
+      </div>
+    </footer>
+    <script src="js/produits.js"></script>
+    <script src="js/favoris.js"></script>
+    <script src="js/page-favoris.js"></script>
+  </body>
+</html>

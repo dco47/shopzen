@@ -27,9 +27,23 @@
         </form>
         <div class="header-actions">
           <a class="header-link" href="produits.html">Tous les produits</a>
-          <a class="header-link" href="panier.html" aria-current="page"
-            >Panier</a
-          >
+          <a class="header-link cart-link" href="panier.html" aria-current="page">
+            <span class="cart-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M3.5 4h2l2.1 11.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.5L21 8H6.2"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle cx="10" cy="20" r="1.2" fill="currentColor" />
+                <circle cx="18" cy="20" r="1.2" fill="currentColor" />
+              </svg>
+            </span>
+            <span>Panier</span>
+            <span id="cart-count-header" class="cart-count-header" aria-label="0 article au panier">0</span>
+          </a>
         </div>
       </div>
       <nav class="main-nav" aria-label="Navigation principale">
@@ -37,6 +51,7 @@
           <a href="index.html">Accueil</a>
           <a href="produits.html">Tous les produits</a>
           <a href="index.html#selection">Notre sélection</a>
+          <a href="favoris.html">Favoris <span id="favorites-count" class="favorites-count">0</span></a>
         </div>
       </nav>
     </header>
@@ -86,7 +101,10 @@
               <span>Total</span>
               <strong id="cart-total"></strong>
             </div>
-            <a class="button button-primary" href="produits.html"
+            <a class="button button-primary" href="commande.html"
+              >Finaliser ma commande</a
+            >
+            <a class="cart-continue-link" href="produits.html"
               >Continuer mes achats</a
             >
           </aside>
@@ -104,6 +122,8 @@
       </div>
     </footer>
     <script src="js/produits.js"></script>
+    <script src="js/compteur-panier.js"></script>
+    <script src="js/favoris.js"></script>
     <script src="js/panier.js"></script>
   </body>
 </html>

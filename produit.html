@@ -65,6 +65,12 @@
               </svg>
             </span>
             <span>Panier</span>
+            <span
+              id="cart-count-header"
+              class="cart-count-header"
+              aria-label="0 article au panier"
+              >0</span
+            >
           </a>
         </div>
       </div>
@@ -75,6 +81,7 @@
           <a href="produits.html">Tous les produits</a>
           <a href="index.html#selection">Notre sélection</a>
           <a href="index.html#engagements">Nos engagements</a>
+          <a href="favoris.html">Favoris <span id="favorites-count" class="favorites-count">0</span></a>
         </div>
       </nav>
     </header>
@@ -135,6 +142,8 @@
 
     <!-- Scripts prévus pour charger les données et le détail du produit. -->
     <script src="js/produits.js"></script>
+    <script src="js/compteur-panier.js"></script>
+    <script src="js/favoris.js"></script>
     <script src="js/detail-produit.js"></script>
   </body>
 </html>

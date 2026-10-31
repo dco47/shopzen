@@ -89,6 +89,7 @@ listeArticles.addEventListener("click", (event) => {
   }
 
   localStorage.setItem("panier", JSON.stringify(panier));
+  document.dispatchEvent(new CustomEvent("shopzen:cartchange"));
   afficherPanier();
 });
 

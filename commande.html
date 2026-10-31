@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Renseignez vos informations de livraison et simulez la finalisation de votre commande ShopZen."
+    />
+    <title>Finaliser ma commande | ShopZen</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-main page-container detail-header">
+        <a class="brand" href="index.html" aria-label="ShopZen, accueil">
+          <span>Shop<span class="brand-accent">Zen</span></span>
+        </a>
+        <div class="header-actions">
+          <a class="header-link" href="produits.html">Tous les produits</a>
+          <a class="header-link cart-link" href="panier.html">
+            <span class="cart-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M3.5 4h2l2.1 11.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.5L21 8H6.2"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle cx="10" cy="20" r="1.2" fill="currentColor" />
+                <circle cx="18" cy="20" r="1.2" fill="currentColor" />
+              </svg>
+            </span>
+            <span>Retour au panier</span>
+            <span id="cart-count-header" class="cart-count-header" aria-label="0 article au panier">0</span>
+          </a>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <div class="page-container nav-inner">
+          <a href="index.html">Accueil</a>
+          <a href="produits.html">Tous les produits</a>
+          <a href="favoris.html">Favoris <span id="favorites-count" class="favorites-count">0</span></a>
+          <a class="nav-current" href="commande.html" aria-current="page">Finaliser ma commande</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-container checkout-page">
+      <nav class="breadcrumbs" aria-label="Fil d’Ariane">
+        <a href="index.html">Accueil</a>
+        <span aria-hidden="true">/</span>
+        <a href="panier.html">Mon panier</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Finaliser ma commande</span>
+      </nav>
+
+      <div class="checkout-heading">
+        <span class="eyebrow">ShopZen · Informations de livraison</span>
+        <h1>Finaliser ma commande</h1>
+        <p>Renseignez vos coordonnées et choisissez comment vous souhaitez régler cette commande.</p>
+      </div>
+
+      <section id="checkout-empty" class="checkout-empty" hidden>
+        <h2>Votre panier est vide</h2>
+        <p>Ajoutez des produits avant de passer commande.</p>
+        <a class="button button-primary" href="produits.html">Découvrir les produits</a>
+      </section>
+
+      <section id="checkout-content" class="checkout-layout" hidden>
+        <form id="checkout-form" class="checkout-form">
+          <fieldset class="checkout-section">
+            <legend><span>1</span> Informations personnelles</legend>
+            <div class="checkout-fields">
+              <div class="checkout-field">
+                <label for="checkout-name">Nom complet</label>
+                <input id="checkout-name" name="name" type="text" autocomplete="name" placeholder="Votre nom et prénom" required />
+              </div>
+              <div class="checkout-field">
+                <label for="checkout-email">Adresse e-mail</label>
+                <input id="checkout-email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.com" required />
+              </div>
+              <div class="checkout-field checkout-field-full">
+                <label for="checkout-phone">Téléphone</label>
+                <input id="checkout-phone" name="phone" type="tel" autocomplete="tel" minlength="8" placeholder="+225 07 00 00 00 00" required />
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="checkout-section">
+            <legend><span>2</span> Adresse de livraison</legend>
+            <div class="checkout-fields">
+              <div class="checkout-field checkout-field-full">
+                <label for="checkout-address">Adresse</label>
+                <input id="checkout-address" name="address" type="text" autocomplete="street-address" placeholder="Rue, quartier, repère" required />
+              </div>
+              <div class="checkout-field">
+                <label for="checkout-city">Ville</label>
+                <input id="checkout-city" name="city" type="text" autocomplete="address-level2" placeholder="Votre ville" required />
+              </div>
+              <div class="checkout-field">
+                <label for="checkout-country">Pays</label>
+                <input id="checkout-country" name="country" type="text" autocomplete="country-name" value="Côte d’Ivoire" required />
+              </div>
+              <div class="checkout-field checkout-field-full">
+                <label for="checkout-note">Instructions de livraison <span>(facultatif)</span></label>
+                <textarea id="checkout-note" name="note" rows="3" placeholder="Précisions pour trouver votre adresse"></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="checkout-section">
+            <legend><span>3</span> Mode de paiement</legend>
+            <p class="checkout-section-hint">Choisissez une option pour cette simulation.</p>
+            <div class="payment-options">
+              <label class="payment-option">
+                <input type="radio" name="payment" value="delivery" checked required />
+                <span class="payment-option-copy"><strong>Paiement à la livraison</strong><small>Réglez votre commande à la réception.</small></span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment" value="orange-money" />
+                <span class="payment-option-copy"><strong>Orange Money</strong><small>Paiement mobile · simulation uniquement.</small></span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment" value="mtn-mobile-money" />
+                <span class="payment-option-copy"><strong>MTN Mobile Money</strong><small>Paiement mobile · simulation uniquement.</small></span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment" value="wave" />
+                <span class="payment-option-copy"><strong>Wave</strong><small>Paiement mobile · simulation uniquement.</small></span>
+              </label>
+            </div>
+            <p class="checkout-demo-note">Démo uniquement : aucun paiement ne sera effectué. Ne saisissez aucun code secret ou code de validation.</p>
+          </fieldset>
+
+          <p id="checkout-error" class="checkout-error" role="alert" hidden></p>
+          <button class="button button-primary checkout-submit" type="submit">Confirmer la commande de démonstration</button>
+        </form>
+
+        <aside class="checkout-summary" aria-labelledby="checkout-summary-title">
+          <h2 id="checkout-summary-title">Récapitulatif</h2>
+          <div id="checkout-items" class="checkout-items"></div>
+          <div class="checkout-total-row">
+            <span>Total à payer</span>
+            <strong id="checkout-total"></strong>
+          </div>
+          <p class="checkout-summary-note">Le montant affiché est une simulation en FCFA.</p>
+        </aside>
+      </section>
+
+      <section id="checkout-success" class="checkout-success" role="status" aria-live="polite" hidden>
+        <span class="checkout-success-icon" aria-hidden="true">✓</span>
+        <span class="eyebrow">Simulation terminée</span>
+        <h2>Merci, votre commande de démonstration est confirmée.</h2>
+        <p>Aucun paiement réel n’a été effectué et vos coordonnées n’ont pas été enregistrées.</p>
+        <a class="button button-primary" href="produits.html">Retour à la boutique</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-container footer-inner">
+        <a class="brand footer-brand" href="index.html">Shop<span class="brand-accent">Zen</span></a>
+        <p>Des essentiels choisis avec soin, pour un quotidien plus doux.</p>
+        <span class="copyright">© 2026 ShopZen. Tous droits réservés.</span>
+      </div>
+    </footer>
+    <script src="js/produits.js"></script>
+    <script src="js/compteur-panier.js"></script>
+    <script src="js/favoris.js"></script>
+    <script src="js/commande.js"></script>
+  </body>
+</html>
